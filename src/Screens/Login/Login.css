@@ -1,0 +1,60 @@
+.chbi-login-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60vh;
+  width: 30vw;
+  background-color:#D9D9D9;
+}
+
+.chbi-login-tabs {
+  display: flex;
+}
+
+.chbi-tab-link {
+  padding:16px;
+}
+
+.chbi-login-inputs {
+  display: flex;
+  justify-content: center;
+  height: 71%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chbi-login-input-text {
+  display: flex;
+  align-items: center;
+  height: 30%;
+  margin-bottom: 8px;
+}
+
+input {
+  height: 50px;
+  width: 350px;
+  font-size: 1.25rem;
+}
+
+.chbi-login-button {
+  display: flex;
+  justify-content: center;
+}
+
+.chbi-login-submit-button {
+  width: 230px;
+  height: 81px;
+  border-radius: 50px;
+  background-color: #0A8507;
+  margin: 16px;
+  color: white;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1320px ) {
+  .chbi-login-form-container {
+    height: 50vh;
+    width: 50vw;
+  }
+}
