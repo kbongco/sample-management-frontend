@@ -17,9 +17,9 @@ export default function NavBar() {
         <div className='chbi-navbar-links-container'>
           <div className='chbi-navbar-links'>
             <a href='/' className='chbi-navbar-links-000'>Home</a>
-            <a href='/' className='chbi-navbar-links-000'>Submit Samples</a>
-            <a href='/' className='chbi-navbar-links-000'>View Samples</a>
-            <a href='/' className='chbi-navbar-links-000'>View Teams Samples</a>
+            <a href='/submit-samples' className='chbi-navbar-links-000'>Submit Samples</a>
+            <a href='/view-samples' className='chbi-navbar-links-000'>View Samples</a>
+            <a href='/view-team-samples' className='chbi-navbar-links-000'>View Teams Samples</a>
           </div>
         </div>
       </div>
