@@ -1,0 +1,44 @@
+.chbi-dashboard-title {
+  display: flex;
+  height: 20%;
+}
+
+.chbi-dashboard-title-text {
+  display: flex;
+  align-items: end;
+}
+
+.chbi-view-sample-link {
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.chbi-dashboard-all-text {
+  font-size: 1.4rem;
+}
+
+.chbi-scientist-samples-container {
+  max-height: 50%;
+}
+
+.chbi-needs-attention-header {
+  height: 20vh;
+}
+
+.chbi-sample-header-text {
+  text-align: left;
+  font-size: 1.25rem
+}
+
+.chbi-sample-tables {
+  width: 100%;
+}
+
+.chbi-sample-headers {
+  line-height: 10vh;
+}
+
+.chbi-sample-details {
+  line-height: 5vh;
+  font-size: 1.1rem;
+}
