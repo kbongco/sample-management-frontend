@@ -8,6 +8,7 @@ export default function DashBoardContent() {
   const [recordsPerPage] = useState(3);
   const samplesInTest: Samples[] = [
     {
+      id: 1,
       sampleName: 'Test Sample 1',
       testRequested: 'pH',
       currentWeek: 'Week 8',
@@ -15,6 +16,7 @@ export default function DashBoardContent() {
       sampleDetails: '/sample-1'
     },
     {
+      id: 2,
       sampleName: 'Test Sample 2',
       testRequested: 'All Cosmetics Test',
       currentWeek: 'Week 1',
@@ -22,6 +24,7 @@ export default function DashBoardContent() {
       sampleDetails: '/sample-2'
     },
     {
+      id: 3,
       sampleName: 'Test Sample 3',
       testRequested: 'All Food Tests',
       currentWeek: 'Week 3',
@@ -29,11 +32,12 @@ export default function DashBoardContent() {
       sampleDetails: '/sample-3'
     },
     {
-      sampleName: 'Test Sample 3',
+      id: 4,
+      sampleName: 'Test Sample 4',
       testRequested: 'All Food Tests',
-      currentWeek: 'Week 3',
+      currentWeek: 'Week 1',
       inSpec: false,
-      sampleDetails: '/sample-3'
+      sampleDetails: '/sample-4'
     }
 
   ];
@@ -72,7 +76,7 @@ export default function DashBoardContent() {
               </thead>
               <tbody className='chbi-sample-details'>
                 {samplesInTest.map((sample: Samples) => (
-                  <tr>
+                  <tr key={sample.id}>
                     <td>
                       {sample.sampleName}
                     </td>

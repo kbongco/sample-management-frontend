@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Sample Management App (named TBD)
+A web application which replaces the usage of excel spread sheets in the laboratory which tracks samples going in an out of the lab for testing, as well as a way to record results in one place. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description 
 
-## Available Scripts
+**What is this project about?**<br>
+In my previous career before switching over to tech I worked as a laboratory technician in multiple food and cosmetic labs either doing product development work or doing quality control testing. 
 
-In the project directory, you can run:
+In one of my previous roles, I worked for a Cosmetics company doing stability testing for the samples going in and out of the lab. There was an excel spread sheet that kept track of all the samples that were going in for stability testing. Within the first few weeks of me working there, I noticed there were several problems which would often lead to lost samples, angry chemists, and frustrated stability testers. In addition, when the chemists were submitting their paperwork sometimes it would cause it to go missing prior to myself and my colleague entering in the samples that had to be tested, which would lead to angry chemists. 
 
-### `npm start`
+This project is a one-stop shop and a way to replace the usage of excel sheets keeping track of things going in and out of the lab. While bigger companies can afford LIMS (laboratory inventory management system) this project I'm creating will hopefully be more cost effective for more smaller labs that may not be able to afford something that fancy. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I am currently developing the front end, as I am mostly a front end developer when it comes to development. At some point I will be starting the backend. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Technologies used in the front end** <br>
+React.js<br>
+SASS<br>
+Figma for design mockups<br>
+Jest for tests<br>
+Storybook<br>
+*Other tools are still being determined*
 
-### `npm test`
+## How to run
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Currently this is still in development. But if you are curious on how the project runs this is the instructions. 
 
-### `npm run build`
+1. Clone down this repo 
+2. Go into the folder, and run npm run start 
+3. Once the app is running you can go to localhost:3000 and start playing around with it 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+There are also tests that you can run that you can run to ensure the features are working as expected. This command is: 
+npm test 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features that will be developed 
+  *Coming soon*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Some other questions
 
-### `npm run eject`
+**Is there a backend connected with this?**<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Not yet unfortunately. As I mentioned above I'm mostly a front end developer by trade when it comes to development. So that's why I did the front end first. That being said, if you want to help me with that and figure out how to scale this send me an email and let's chat. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Can I help out?**<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+For sure! Send me and email and we can definitely talk it out!
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
