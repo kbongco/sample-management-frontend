@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DashBoardContent.css';
 import { Samples } from '../../../interfaces/samples-interface';
+import Pagination from '../../../Components/Pagination/Pagination';
 
 export default function DashBoardContent() {
   const sampleAlert: boolean = false;
+  const [currentPage, setCurrentPage] = useState(1);
+  const [recordsPerPage] = useState(3);
   const samplesInTest: Samples[] = [
     {
       sampleName: 'Test Sample 1',
@@ -25,8 +28,21 @@ export default function DashBoardContent() {
       currentWeek: 'Week 3',
       inSpec: false,
       sampleDetails: '/sample-3'
+    },
+    {
+      sampleName: 'Test Sample 3',
+      testRequested: 'All Food Tests',
+      currentWeek: 'Week 3',
+      inSpec: false,
+      sampleDetails: '/sample-3'
     }
+
   ];
+  const lastPage = Math.floor(samplesInTest.length / recordsPerPage);
+
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = samplesInTest.slice(indexOfFirstRecord, indexOfLastRecord);
 
   return (
     <div>
@@ -67,15 +83,18 @@ export default function DashBoardContent() {
                       {sample.currentWeek}
                     </td>
                     <td>
-                      true
+                      {sample.inSpec.toString()}
                     </td>
                     <td>
-                     <a href={sample.sampleDetails}>View Samples</a>
+                     <a className='chbi-view-details'href={sample.sampleDetails}>View Samples</a>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>}
+          <div className='chbi-pagination-container'>
+            <Pagination currentPage={currentPage} lastPage={lastPage} setCurrentPage={setCurrentPage} />
+          </div>
         </div>
       </div>
     </div>

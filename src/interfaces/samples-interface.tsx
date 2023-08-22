@@ -1,6 +1,6 @@
 export interface Samples {
   sampleName: string;
-  testRequested: any;
+  testRequested: string;
   currentWeek: string;
   inSpec: any;
   sampleDetails: string;

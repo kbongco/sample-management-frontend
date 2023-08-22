@@ -1,0 +1,15 @@
+.chbi-pagination-backward, .chbi-pagination-forward {
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.chbi-pagination-text {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.chbi-pagination, .chbi-pagination-right-arrow {
+  display: flex;
+  align-items: center;
+}
