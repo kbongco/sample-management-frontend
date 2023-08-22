@@ -10,6 +10,7 @@ export default function DashBoardContent() {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(3);
+  // Currently using hard-coded data since there is no backend yet
   const samplesInTest: Samples[] = [
     {
       id: 1,
