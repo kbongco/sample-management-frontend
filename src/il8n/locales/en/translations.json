@@ -1,0 +1,15 @@
+{
+  "inNeedOfReview": "The following samples are in need of scientist review",
+  "inSpecifications": "No samples are currently out of spec",
+  "noSamplesInTest": "You currently do not have samples in test",
+  "sampleHeader": "Sample Name",
+  "testRequested": "Test Requested",
+  "currentWeek": "Current Week",
+  "inSpec": "In Spec?",
+  "sampleDetails": "Sample Details",
+  "viewSamples": "View Samples",
+  "yourDashBoard": "Your Dashboard",
+  "viewAllSamples": "View Your Samples",
+  "allTeamSamples": "All your team's samples",
+  "viewDetails": "View Details"
+}

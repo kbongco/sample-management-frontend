@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import './DashBoardContent.css';
 import { Samples } from '../../../interfaces/samples-interface';
 import Pagination from '../../../Components/Pagination/Pagination';
+import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 export default function DashBoardContent() {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(3);
   const samplesInTest: Samples[] = [
@@ -51,27 +55,34 @@ export default function DashBoardContent() {
   return (
     <div>
       <div className='chbi-dashboard-title'>
-        <h1 className='chbi-dashboard-title-text'>Your Dashboard</h1>
+        <h1 className='chbi-dashboard-title-text'>{t('yourDashBoard')}</h1>
       </div>
       <div className='chbi-subtitle-text'>
-        <a  className='chbi-view-sample-link' href='/'>View Your Samples</a>
+        <a className='chbi-view-sample-link' href='/'>{t('viewAllSamples')}</a>
       </div>
       <div className='chbi-needs-attention-header'>
         <h2>Needs to be addressed</h2>
-        {outOfSpecSamples.length > 0 ? <div><p>The following samples are in need of scientist review</p></div>: <p>No samples are currently out of spec</p>}
+        {outOfSpecSamples.length > 0 ? <div><p>{t('inNeedOfReview')}:</p>
+          {outOfSpecSamples.map((sample: any) => (
+            <div className='chbi-out-sample'>
+              <FontAwesomeIcon icon={faTriangleExclamation} />
+              {sample.sampleName}
+            </div>
+          ))}
+        </div> : <p>{t('inSpecifications')}</p>}
       </div>
       <div className='chbi-scientist-samples-container'>
         <div className='chbi-dashboard-sample-text-container'>
-          <h3 className='chbi-dashboard-all-text'>All of your team's samples</h3>
-          {samplesInTest.length === 0 ?  <div><h1>You currently do not have any samples in test</h1></div> :
+          <h3 className='chbi-dashboard-all-text'>{t('allTeamSamples')}</h3>
+          {samplesInTest.length === 0 ? <div><h1>{t('noSamplesInTest')}</h1></div> :
             <table className='chbi-sample-tables'>
               <thead className='chbi-sample-headers'>
                 <tr className='chbi-sample-header-text'>
-                  <th>Sample Name</th>
-                  <th>Test Requested</th>
-                  <th>Current Week</th>
-                  <th>inSpec</th>
-                  <th>Sample Details</th>
+                  <th>{t('sampleHeader')}</th>
+                  <th>{t('testRequested')}</th>
+                  <th>{t('currentWeek')}</th>
+                  <th>{t('inSpec')}</th>
+                  <th>{t('sampleDetails')}</th>
                 </tr>
               </thead>
               <tbody className='chbi-sample-details'>
@@ -90,7 +101,7 @@ export default function DashBoardContent() {
                       {sample.inSpec.toString()}
                     </td>
                     <td>
-                     <a className='chbi-view-details'href={sample.sampleDetails}>View Samples</a>
+                      <a className='chbi-view-details' href={sample.sampleDetails}>{t('viewDetails')}</a>
                     </td>
                   </tr>
                 ))}
