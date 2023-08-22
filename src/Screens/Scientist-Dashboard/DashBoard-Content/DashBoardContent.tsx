@@ -4,7 +4,6 @@ import { Samples } from '../../../interfaces/samples-interface';
 import Pagination from '../../../Components/Pagination/Pagination';
 
 export default function DashBoardContent() {
-  const sampleAlert: boolean = false;
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(3);
   const samplesInTest: Samples[] = [
@@ -43,6 +42,7 @@ export default function DashBoardContent() {
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = samplesInTest.slice(indexOfFirstRecord, indexOfLastRecord);
+  const outOfSpecSamples: Samples[] = samplesInTest.filter((sample: Samples) => sample.inSpec === false);
 
   return (
     <div>
@@ -54,7 +54,7 @@ export default function DashBoardContent() {
       </div>
       <div className='chbi-needs-attention-header'>
         <h2>Needs to be addressed</h2>
-        {sampleAlert ? <div><p>The following samples are in need of scientist review</p></div>: <p>No samples are currently out of spec</p>}
+        {outOfSpecSamples.length > 0 ? <div><p>The following samples are in need of scientist review</p></div>: <p>No samples are currently out of spec</p>}
       </div>
       <div className='chbi-scientist-samples-container'>
         <div className='chbi-dashboard-sample-text-container'>
