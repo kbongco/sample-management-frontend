@@ -6,8 +6,7 @@ import './Pagination.css'
 
 export default function ({ totalNumber, itemsPerPage, currentPage, onPageChange, lastPage }: Pagination) {
 
-  const totalEntries = Math.ceil(totalNumber / itemsPerPage);
-  const pageNumbers = Array.from({ length: totalEntries }, (_, index) => index + 1);
+
   const handlePageChange = (newPage: number) => {
     if (newPage >= 1 && newPage <= lastPage) {
       onPageChange(newPage);
@@ -16,6 +15,7 @@ export default function ({ totalNumber, itemsPerPage, currentPage, onPageChange,
   return (
     <div className='chbi-pagination-container'>
       <div className='chbi-pagination'>
+        {/* Add in button component for the button */}
         <button className='chbi-pagination-backward'           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}>
           <FontAwesomeIcon icon={faBackward} />
