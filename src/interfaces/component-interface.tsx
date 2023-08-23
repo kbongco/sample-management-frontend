@@ -1,7 +1,7 @@
 export interface Pagination {
-  // pages?: number;
+  totalNumber: number;
+  itemsPerPage: number;
   currentPage: number;
-  setCurrentPage?: any;
+  onPageChange: (page: number) => void;
   lastPage: number;
-  recordsPerPage?: number;
 }

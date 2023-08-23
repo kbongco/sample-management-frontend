@@ -8,8 +8,6 @@ import { faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 export default function DashBoardContent() {
   const { t } = useTranslation();
-  const [currentPage, setCurrentPage] = useState(1);
-  const [recordsPerPage] = useState(3);
   // Currently using hard-coded data since there is no backend yet
   const samplesInTest: Samples[] = [
     {
@@ -46,11 +44,12 @@ export default function DashBoardContent() {
     }
 
   ];
-  const lastPage = Math.floor(samplesInTest.length / recordsPerPage);
-
-  const indexOfLastRecord = currentPage * recordsPerPage;
-  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = samplesInTest.slice(indexOfFirstRecord, indexOfLastRecord);
+  const totalItems = samplesInTest.length;
+  const itemsPerPage = 3;
+  const [currentPage, setCurrentPage] = useState(1);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = Math.min(startIndex + itemsPerPage, samplesInTest.length);
+  const filteredSamples = samplesInTest.slice(startIndex, endIndex);
   const outOfSpecSamples: Samples[] = samplesInTest.filter((sample: Samples) => sample.inSpec === false);
 
   return (
@@ -62,9 +61,9 @@ export default function DashBoardContent() {
         <a className='chbi-view-sample-link' href='/'>{t('viewAllSamples')}</a>
       </div>
       <div className='chbi-needs-attention-header'>
-        <h2>Needs to be addressed</h2>
+        <h2>{t('needsToBeAddressed')}</h2>
         {outOfSpecSamples.length > 0 ? <div><p>{t('inNeedOfReview')}:</p>
-          {outOfSpecSamples.map((sample: any) => (
+          {outOfSpecSamples.map((sample: Samples) => (
             <div className='chbi-out-sample'>
               <FontAwesomeIcon icon={faTriangleExclamation} />
               {sample.sampleName}
@@ -87,7 +86,7 @@ export default function DashBoardContent() {
                 </tr>
               </thead>
               <tbody className='chbi-sample-details'>
-                {samplesInTest.map((sample: Samples) => (
+                {filteredSamples.map((sample: Samples) => (
                   <tr key={sample.id}>
                     <td>
                       {sample.sampleName}
@@ -109,7 +108,11 @@ export default function DashBoardContent() {
               </tbody>
             </table>}
           <div className='chbi-pagination-container'>
-            <Pagination currentPage={currentPage} lastPage={lastPage} setCurrentPage={setCurrentPage} />
+            <Pagination totalNumber={totalItems}
+              itemsPerPage={itemsPerPage}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+              lastPage={Math.ceil(totalItems / itemsPerPage)} />
           </div>
         </div>
       </div>

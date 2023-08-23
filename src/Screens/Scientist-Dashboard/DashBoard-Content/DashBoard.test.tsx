@@ -7,4 +7,4 @@ describe('DashBoardContent', () => {
     render(<DashBoardContent />)
   });
   
-})
+});

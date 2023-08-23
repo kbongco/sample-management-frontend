@@ -12,7 +12,6 @@ function App() {
         <NavBar />
         <DashBoardContent/>
       </div>
-    {/* <Login/> */}
       </>
   );
 }
