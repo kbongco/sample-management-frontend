@@ -1,0 +1,16 @@
+.chbi-input-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chbi-input-label {
+  font-size: 1.1rem;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.chbi-input {
+  height: 30px;
+  border: 1px solid black;
+}

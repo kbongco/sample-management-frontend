@@ -1,0 +1,38 @@
+.chbi-submit-header-container {
+  height: 15vh;
+  display: flex;
+  align-items: end;
+}
+
+.chbi-submit-samples-form-container {
+  margin-left: 24px;
+}
+
+.chbi-submit-instructions-container {
+  width: 50vw;
+  height: 15vh;
+}
+
+.chbi-submit-header {
+  margin: 0;
+}
+
+.chbi-submit-warning-label {
+  font-size: 0.7rem;
+}
+
+.chbi-submit-form {
+  display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 0.7fr);
+grid-column-gap: 16px;
+grid-row-gap: 8px;
+}
+
+.chbi-submit-form-column1 {
+   grid-area: 1 / 1 / 4 / 2; 
+}
+
+.chbi-submit-form-column2 {
+  grid-area: 1 / 2 / 4 / 3;
+}

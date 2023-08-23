@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 export interface Pagination {
   totalNumber: number;
   itemsPerPage: number;
@@ -13,4 +15,16 @@ export interface Button {
   className?: string;
   size?: 'small' | 'medium' | 'large';
   disabled?: boolean;
+}
+
+export interface InputProp {
+  type?: 'text' | 'password' | 'email'
+  label?: string;
+  value?: string;
+  name?: string;
+  placeholder?: string;
+  error?: boolean;
+  errorMessage?: string;
+  disabled?: boolean;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
