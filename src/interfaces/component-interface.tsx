@@ -28,3 +28,15 @@ export interface InputProp {
   disabled?: boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
+
+export interface Option {
+  value: string;
+  label: string;
+}
+
+export interface SelectProps {
+  label: string;
+  options: Option[];
+  value: string;
+  onChange: (value: string) => void;
+}

@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import './SubmitSamples.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  { faExclamation } from '@fortawesome/free-solid-svg-icons';
 import Input from '../../Components/Input/Input';
+import DropDown from '../../Components/DropDownInput/DropDownInput';
+import { SelectProps } from '../../interfaces/component-interface';
 
 export default function SubmitSamples() {
+
+  const options = [
+    {value: 'Select Test', label: ''},
+    { value: 'option1', label: 'Option 1' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Option 3' },
+  ];
+
+  const [selectedOption, setSelectedOption] = useState<string>('Select Test');
+
+  const handleSelectChange = (value: string) => {
+    setSelectedOption(value);
+  };
+
   const { t } = useTranslation();
   return (
     <div className='chbi-submit-samples-form-container'>
@@ -25,6 +41,12 @@ export default function SubmitSamples() {
         <div className='chbi-submit-form'>
           <div className='chbi-submit-form-column1'>
             <Input type="text" label='Sample Name' placeholder='test placeholder' name='test input' />
+            <DropDown
+        label="Select test"
+        options={options}
+        value={selectedOption}
+        onChange={handleSelectChange}
+      />
           </div>
           <div className='chbi-submit-form-column2'>
           <Input type="text" label='Chemist Name' placeholder='test placeholder' name='test input' />

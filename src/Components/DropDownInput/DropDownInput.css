@@ -1,0 +1,16 @@
+.chbi-select-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.chbi-select-label {
+  margin-bottom: 8px;
+  font-size: 1.1rem
+}
+
+.chbi-select {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
