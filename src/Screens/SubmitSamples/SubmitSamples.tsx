@@ -5,18 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  { faExclamation } from '@fortawesome/free-solid-svg-icons';
 import Input from '../../Components/Input/Input';
 import DropDown from '../../Components/DropDownInput/DropDownInput';
-import { SelectProps } from '../../interfaces/component-interface';
+import * as constants from '../../utils/constants';
 
 export default function SubmitSamples() {
-
-  const options = [
-    {value: 'Select Test', label: ''},
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
-  ];
-
-  const [selectedOption, setSelectedOption] = useState<string>('Select Test');
+  
+  const [selectedOption, setSelectedOption] = useState<string>('Select Options');
 
   const handleSelectChange = (value: string) => {
     setSelectedOption(value);
@@ -26,30 +19,36 @@ export default function SubmitSamples() {
   return (
     <div className='chbi-submit-samples-form-container'>
       <div className='chbi-submit-header-container'>
-        <h1 className='chbi-submit-header'>Submit Samples</h1>
+        <h1 className='chbi-submit-header'>{t('submitScreen.submitHeader')}</h1>
       </div>
       <div className='chbi-submit-instructions-container'>
         <ol className='chbi-submit-instructions'>
-          <li>Please provide a paper copy to the lab, as well as an uploaded version of your samples paperwork. This is to ensure that we have a record that you submitted samples for testing</li>
-          <li>Please provide any special instructions for testing below</li>
-          <li>Once we have recieved everything, you will recieve an email notifying you that we have it on record and testing will begin as scheduled</li>
-          <li>Any issues please contact the lab, and we will get back to you ASAP</li>
+          <li>{t('submitScreen.instructions.first')}</li>
+          <li>{t('submitScreen.instructions.second')}</li>
+          <li>{t('submitScreen.instructions.third')}</li>
+          <li>{t('submitScreen.instructions.fourth')}</li>
         </ol>
         <div className='chbi-submit-warning-label'>
-          <h2>Any missing samples or missing information will cause a delay in processing</h2>
+          <h2>{t('submitScreen.instructions.warning')}</h2>
         </div>
         <div className='chbi-submit-form'>
           <div className='chbi-submit-form-column1'>
             <Input type="text" label='Sample Name' placeholder='test placeholder' name='test input' />
             <DropDown
-        label="Select test"
-        options={options}
+        label="Select Sample Type"
+        options={constants.sampleType}
         value={selectedOption}
         onChange={handleSelectChange}
       />
           </div>
           <div className='chbi-submit-form-column2'>
-          <Input type="text" label='Chemist Name' placeholder='test placeholder' name='test input' />
+            <Input type="text" label='Chemist Name' placeholder='test placeholder' name='test input' />
+            <DropDown
+        label="Select test"
+        options={constants.sampleTests}
+        value={selectedOption}
+        onChange={handleSelectChange}
+      />
           </div>
         </div>
       </div>
