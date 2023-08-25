@@ -29,6 +29,18 @@ export interface InputProp {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
+export interface TextAreaProp {
+  type: 'text';
+  label?: string;
+  value?: string;
+  name?: string;
+  placeholder?: string;
+  error?: boolean;
+  errorMessage?: string;
+  disabled?: boolean;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
 export interface Option {
   value: string;
   label: string;
