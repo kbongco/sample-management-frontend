@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextAreaProp } from '../../interfaces/component-interface';
+import './TextArea.css'
 
 export default function TextArea({ value, name, placeholder, disabled, onChange, rows, cols, label}: TextAreaProp) {
   return (

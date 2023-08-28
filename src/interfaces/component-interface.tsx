@@ -37,8 +37,8 @@ export interface TextAreaProp {
   error?: boolean;
   errorMessage?: string;
   disabled?: boolean;
-  rows: number;
-  cols: number;
+  rows?: number;
+  cols?: number;
   onChange?: any;
 }
 

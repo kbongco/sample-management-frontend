@@ -21,12 +21,14 @@
   font-size: 0.7rem;
 }
 
-.chbi-submit-form {
+.chbi-submit-form-layout {
+  width: auto;
+  height: auto;
+
   display: grid;
+  grid-template-rows: repeat(auto-fit, 240px);
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, 3fr);
-  grid-column-gap: 16px;
-  grid-row-gap: 0px;
+  gap: 24px 16px;
 }
 
 .chbi-submit-form-column1 {
@@ -62,16 +64,11 @@
 }
 
 .chbi-input-10 {
+  padding-top: 8px;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-template-rows: 1fr;
 grid-column-gap: 0px;
 grid-row-gap: 0px;
   grid-area: 6 / 1 / 7 / 3;
-}
-
-@media screen(max-width:1020px) {
-  .chbi-submit-samples-form-container {
-    height: 100vh;
-  }
 }
