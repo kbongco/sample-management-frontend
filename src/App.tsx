@@ -8,9 +8,15 @@ import NavBar from './Layout/NavBar/NavBar';
 function App() {
   return (
     <>
-      <div className='chbi-navbar-content'>
-        <NavBar />
-        <DashBoardContent/>
+      <div className='chbi-layout-container'>
+        <div className='chbi-layout-nav-bar'>
+          <NavBar/>
+        </div>
+        <div className='chbi-layout-content'>
+          <h1>Hello</h1>
+        </div>
+        {/* <NavBar /> */}
+        {/* <DashBoardContent/> */}
       </div>
       </>
   );
