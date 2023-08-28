@@ -1,17 +1,18 @@
-.chbi-input-container {
+.chbi-textarea-container {
   width: 250px;
   display: flex;
-  flex-direction: column;
-  padding-top: 16px;
+
 }
 
-.chbi-input-label {
+.chbi-textarea-label {
   font-size: 1.1rem;
   text-align: left;
   padding-bottom: 8px;
 }
 
-.chbi-input {
+.chbi-textarea {
   height: 30px;
   border: 1px solid black;
+  width: 100%;
+
 }

@@ -21,6 +21,11 @@
       "third": "Once we have recieved everything, you will recieve an email notifying you that we have it on record and testing will begin as scheduled",
       "fourth": "Any issues please contact the lab, and we will get back to you ASAP",
       "warning": "Any missing samples or missing information will cause a delay in processing"
-    }
+    },
+    "25C": "25 C",
+    "F/T": "Freeze Thaw",
+    "40C": "40 C",
+    "50C": "50 C",
+    "All": "All"
   }
 }

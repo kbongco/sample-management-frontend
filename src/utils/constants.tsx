@@ -36,3 +36,18 @@ export const testDuration = [
     value: '1', label: '1 year'
   }
 ]
+
+export const temperature = [
+  {
+    value: '25C', label: '25C',
+  },
+  {
+    value:'F/T', label: 'Freeze Thaw',
+  },
+  {
+    value: '40C', label: '40C'
+  }, 
+  {
+    value: '55C', label: '55C'
+  }
+]

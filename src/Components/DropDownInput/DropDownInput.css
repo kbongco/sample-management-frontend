@@ -3,6 +3,7 @@
   flex-direction: column;
   margin-bottom: 16px;
   margin-top: 16px;
+  width: calc(100% - 2.9em);
 }
 
 .chbi-select-label {

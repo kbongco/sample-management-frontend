@@ -23,16 +23,55 @@
 
 .chbi-submit-form {
   display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: repeat(3, 0.7fr);
-grid-column-gap: 16px;
-grid-row-gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 3fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 0px;
 }
 
 .chbi-submit-form-column1 {
-   grid-area: 1 / 1 / 4 / 2; 
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.chbi-input-1 {
+  grid-area: 1 / 1 / 2 / 2; 
+}
+
+.chbi-input-2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.chbi-input-3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.chbi-input-4 {
+  grid-area: 3 / 1 / 4 / 2;
 }
 
 .chbi-submit-form-column2 {
-  grid-area: 1 / 2 / 4 / 3;
+  grid-area: 1 / 2 / 6 / 3;
+}
+
+.chbi-input-8 {
+  grid-area: 1 / 2 / 2 / 3; 
+}
+
+.chbi-input-9{
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.chbi-input-10 {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+  grid-area: 6 / 1 / 7 / 3;
+}
+
+@media screen(max-width:1020px) {
+  .chbi-submit-samples-form-container {
+    height: 100vh;
+  }
 }

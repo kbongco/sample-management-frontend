@@ -30,7 +30,6 @@ export interface InputProp {
 }
 
 export interface TextAreaProp {
-  type: 'text';
   label?: string;
   value?: string;
   name?: string;
@@ -38,7 +37,9 @@ export interface TextAreaProp {
   error?: boolean;
   errorMessage?: string;
   disabled?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  rows: number;
+  cols: number;
+  onChange?: any;
 }
 
 export interface Option {
@@ -51,4 +52,12 @@ export interface SelectProps {
   options: Option[];
   value: string;
   onChange: (value: string) => void;
+}
+
+export interface CheckBoxProps {
+  label: string;
+  name?: string;
+  checked: boolean;
+  onChange?: any;
+  value?: string;
 }
