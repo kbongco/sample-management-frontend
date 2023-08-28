@@ -10,15 +10,13 @@ function App() {
     <>
       <div className='chbi-layout-container'>
         <div className='chbi-layout-nav-bar'>
-          <NavBar/>
+          <NavBar />
         </div>
         <div className='chbi-layout-content'>
-          <h1>Hello</h1>
+          <DashBoardContent />
         </div>
-        {/* <NavBar /> */}
-        {/* <DashBoardContent/> */}
       </div>
-      </>
+    </>
   );
 }
 
