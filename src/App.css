@@ -1,14 +1,15 @@
-.chbi-navbar-content {
-display: grid;
-grid-template-columns: 0.3fr 1fr;
-grid-template-rows: repeat(5, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-height: 100vh;
+.chbi-layout-container {
+  width: 1366px;
+  height: 768px;
+
+  display: grid;
+  grid:
+    "navigation content" 1fr
+    / auto 1fr;
+  gap: 8px;
 }
 
-@media screen and (min-width: 480px) {
-  .chbi-navbar-content {
-    height: 100vh;
-  }
+.chbi-layout-navbar {
+  grid-area: navigation;
+  background-color: #007C91
 }
