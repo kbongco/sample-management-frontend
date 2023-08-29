@@ -11,14 +11,35 @@ import TextArea from '../../Components/TextArea/TextArea';
 import CheckBox from '../../Components/CheckBox/CheckBox';
 import Button from '../../Components/Button/Button';
 
+type FormValues = {
+  sampleName: string;
+  sampleType?: any;
+  totalSamples: string;
+  uploadFile?: any;
+  chemistName: string;
+  selectedTest?: any;
+  specialInstructions: string;
+
+}
+
 export default function SubmitSamples() {
   const {
     register,
     control,
     handleSubmit,
     watch,
-    formState: { errors }
+    formState: { errors, isDirty }
   } = useForm();
+
+  const form = useForm<FormValues>({
+    defaultValues: {
+      sampleName: '',
+      totalSamples: '',
+      chemistName: '',
+      specialInstructions: ''
+    }
+  });
+
 
   const [selectedOption, setSelectedOption] = useState<string>('Select Options');
   // const [selectedTest, setSelectedTest] = useState<string>('Select Test')
@@ -56,7 +77,10 @@ export default function SubmitSamples() {
                 <Controller
                   name='sampleName'
                   control={control}
-                  render={({ field }) => <Input label='Sample Name' {...field} />} />
+                  render={({ field }) => <Input label='Sample Name'
+                    error={!!isDirty}
+                    errorMessage={t('formMessages.requiredField')}
+                    {...field} {...register("sampleName", { required: "Sample Name is required" })} />} />
               </div>
               <div className='chbi-input-2'>
                 <Controller
@@ -75,7 +99,8 @@ export default function SubmitSamples() {
                 <Controller
                   name='totalSamples'
                   control={control}
-                  render={({ field }) => <Input label='Number of Samples' {...field} />} />
+                  render={({ field }) => <Input                   error={!!isDirty}
+                  errorMessage={t('formMessages.requiredField')}label='Number of Samples' {...field} {...register("totalSamples", { required: "Total Number of Samples required" })} />} />
               </div>
               <div className='chbi-input-4'>
                 <Controller
@@ -88,7 +113,9 @@ export default function SubmitSamples() {
               <div className='chbi-input-8'>
                 <Controller name='chemistName'
                   control={control}
-                  render={({ field }) => <Input label='Chemist Name' {...field} />} />
+                  render={({ field }) => <Input
+                    error={!!isDirty}
+                    errorMessage={t('formMessages.requiredField')} label='Chemist Name' {...field} {...register("chemistName", { required: true })} />} />
               </div>
               <div className='chbi-input-9'>
                 <Controller

@@ -27,5 +27,8 @@
     "40C": "40 C",
     "50C": "50 C",
     "All": "All"
+  }, 
+  "formMessages": {
+    "requiredField": "This is a required field"
   }
 }

@@ -15,3 +15,7 @@
   height: 30px;
   border: 1px solid black;
 }
+
+.chbi-input-error-container {
+  margin-top: 8px;
+}
