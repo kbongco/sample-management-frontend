@@ -8,7 +8,7 @@ export interface Pagination {
   lastPage: number;
 }
 
-export interface Button {
+export interface ButtonProp {
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   children?: React.ReactNode;
@@ -27,6 +27,7 @@ export interface InputProp {
   errorMessage?: string;
   disabled?: boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  required?: boolean;
 }
 
 export interface TextAreaProp {

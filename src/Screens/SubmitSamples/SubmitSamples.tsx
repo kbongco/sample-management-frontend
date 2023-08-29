@@ -138,8 +138,8 @@ export default function SubmitSamples() {
             </div>
           </div>
           <div className='chbi-form-buttons-container'>
-            <button className='chbi-form-submit'>Submit</button>
-            <button>Cancel</button>
+            <Button size="medium" className="primary">Submit</Button>
+            <Button size="medium" className="danger">Cancel</Button>
           </div>
         </form>
       </div>

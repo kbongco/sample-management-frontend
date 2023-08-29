@@ -1,8 +1,8 @@
 import React from 'react';
 import './Button.css';
-import { Button } from '../../interfaces/component-interface';
+import { ButtonProp } from '../../interfaces/component-interface';
 
-function Button({ onClick, type, children, className, size, disabled }: Button) {
+function Button({ onClick, type, children, className, size, disabled }: ButtonProp) {
   return (
     <button 
       className={`button ${className} ${size}`}

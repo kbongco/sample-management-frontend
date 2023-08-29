@@ -45,6 +45,10 @@
   grid-area: 1 / 1 / 6 / 2;
 }
 
+.chbi-submit-button {
+  margin-right: 16px;
+}
+
 .chbi-input-1 {
   grid-area: 1 / 1 / 2 / 2; 
 }
