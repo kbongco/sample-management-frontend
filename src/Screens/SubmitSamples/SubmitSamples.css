@@ -13,6 +13,16 @@
   height: 15vh;
 }
 
+.chbi-form-buttons-container {
+  display:flex;
+  justify-content:end;
+  padding-top: 24px;
+}
+
+.chbi-form-submit {
+  margin-right: 16px;
+}
+
 .chbi-submit-header {
   margin: 0;
 }

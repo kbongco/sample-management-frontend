@@ -78,11 +78,11 @@ export default function SubmitSamples() {
                   render={({ field }) => <Input label='Number of Samples' {...field} />} />
               </div>
               <div className='chbi-input-4'>
-            <Controller
-              name='uploadfile'
-              control={control}
-              render={({ field }) => <Input label='Upload File' {...field} />} />
-            </div>
+                <Controller
+                  name='uploadfile'
+                  control={control}
+                  render={({ field }) => <Input label='Upload File' {...field} />} />
+              </div>
             </div>
             <div className='chbi-submit-form-column2'>
               <div className='chbi-input-8'>
@@ -103,28 +103,42 @@ export default function SubmitSamples() {
                 />
               </div>
               <div className='chbi-input-10'>
-
-                <CheckBox label={t('submitScreen.25C')} checked={false} />
-                <CheckBox label={t('submitScreen.F/T')} checked={false} />
-                <CheckBox label={t('submitScreen.40C')} checked={false} />
-                <CheckBox label={t('submitScreen.50C')} checked={false} />
-                <CheckBox label={t('submitScreen.All')} checked={false} />
+                <Controller
+                  name='uploadfile'
+                  control={control}
+                  render={({ field }) => <CheckBox label={t('submitScreen.25C')} checked={false} />} />
+                <Controller
+                  name='uploadfile'
+                  control={control}
+                  render={({ field }) => <CheckBox label={t('submitScreen.F/T')} checked={false} />} />
+                <Controller
+                  name='uploadfile'
+                  control={control}
+                  render={({ field }) => <CheckBox label={t('submitScreen.40C')} checked={false} />} />
+                <Controller
+                  name='uploadfile'
+                  control={control}
+                  render={({ field }) => <CheckBox label={t('submitScreen.50C')} checked={false} />} />
+                <Controller
+                  name='uploadfile'
+                  control={control}
+                  render={({ field }) => <CheckBox label={t('submitScreen.All')} checked={false} />} />
               </div>
               <div className='chbi-input-11'>
-            <Controller
-              name='uploadfile'
-              control={control}
-              render={({ field }) => <Input label='Upload Photo' {...field} />} />
-            </div>
+                <Controller
+                  name='uploadfile'
+                  control={control}
+                  render={({ field }) => <Input label='Upload Photo' {...field} />} />
+              </div>
             </div>
           </div>
           <div className='chbi-textarea-submit-container'>
-          <div className='chbi-input-5'>
+            <div className='chbi-input-5'>
               <TextArea rows={5} cols={35} label='Special Instructions' />
             </div>
           </div>
           <div className='chbi-form-buttons-container'>
-            <button>Submit</button>
+            <button className='chbi-form-submit'>Submit</button>
             <button>Cancel</button>
           </div>
         </form>
