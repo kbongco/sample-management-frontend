@@ -10,6 +10,7 @@ import { useForm, Controller } from "react-hook-form";
 import TextArea from '../../Components/TextArea/TextArea';
 import CheckBox from '../../Components/CheckBox/CheckBox';
 import Button from '../../Components/Button/Button';
+import { DevTool } from '@hookform/devtools';
 
 type FormValues = {
   sampleName: string;
@@ -25,7 +26,19 @@ type FormValues = {
 export default function SubmitSamples() {
   const { register, handleSubmit, control, formState: {
     errors, isDirty
-  } } = useForm();
+  }, reset } = useForm({
+    defaultValues: {
+      sampleName: '',
+      sampleType: '',
+      totalSamples: '',
+      uploadfile: '',
+      chemistName: '',
+      temperatureCheck: '',
+      uploadphoto: '',
+      specialInstructions:''
+    }
+  })
+  
   // const {
   //   register,
   //   control,
@@ -48,12 +61,12 @@ export default function SubmitSamples() {
 
   const [selectedOption, setSelectedOption] = useState<string>('Select Options');
   const [selectedTest, setSelectedTest] = useState<string>('Select Test')
-  const [nameLength, setNameLength] = useState<number>(0)
 
   const onSubmit = (data: any) => {
     console.log(data);
     console.log('test');
   };
+
 
 
   const { t } = useTranslation();
@@ -81,10 +94,12 @@ export default function SubmitSamples() {
                   control={control}
                   rules={{ minLength: 5, required: true }}
                   render={({ field }) => <Input label='Sample Name'
-                    error={!!isDirty}
+
+                    error={isDirty}
                     errorMessage={`${!!isDirty ? t('formMessages.requiredField') : ''}`}
                     {...register("sampleName", {
-                    })}      {...field} />} />
+                    })}      {...field}
+                    />} />
               </div>
               <div className='chbi-input-2'>
                 <Controller
@@ -138,7 +153,7 @@ export default function SubmitSamples() {
               </div>
               <div className='chbi-input-10'>
                 <Controller
-                  name='uploadfile'
+                  name='temperatureCheck'
                   control={control}
                   render={({ field }) => <CheckBox label={t('submitScreen.25C')} checked={false} />} />
                 <Controller
@@ -160,7 +175,7 @@ export default function SubmitSamples() {
               </div>
               <div className='chbi-input-11'>
                 <Controller
-                  name='uploadfile'
+                  name='uploadphoto'
                   control={control}
                   render={({ field }) => <Input label='Upload Photo' {...field} />} />
               </div>
@@ -180,6 +195,8 @@ export default function SubmitSamples() {
             <Button size="medium" className="danger">Cancel</Button>
           </div>
         </form>
+
+        <DevTool control={control} placement="top-left" />
       </div>
     </div>
   )

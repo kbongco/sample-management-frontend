@@ -2,10 +2,11 @@ import { InputProp } from "../../interfaces/component-interface";
 import './Input.css'
 
 export default function Input({ type, label, value, name, placeholder, error, disabled, onChange, errorMessage }: InputProp) {
+  const inputClasses = `chbi-input ${error ? 'chbi-input-error' : ''}`;
   return (
     <div className='chbi-input-container'>
       <label className='chbi-input-label'>{label}</label>
-      <input className='chbi-input '
+      <input className={inputClasses}
         type={type}
         value={value}
         name={name}
