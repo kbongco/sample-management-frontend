@@ -4,6 +4,8 @@ export const sampleType = [
   { value: 'cosmetic', label: 'Cosmetic' },
 ];
 
+export const minLength = 5;
+
 export const sampleTests = [
   {value: 'Select Test', label: 'Select Test' },
   {value: 'allCosmetics', label: 'All Cosmetics Test' },

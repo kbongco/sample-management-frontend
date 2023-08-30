@@ -19,3 +19,8 @@
 .chbi-input-error-container {
   margin-top: 8px;
 }
+
+.chibi-input-error {
+  height: 30px;
+  border: 2px solid red;
+}

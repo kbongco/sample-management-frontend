@@ -9,7 +9,7 @@ export interface Pagination {
 }
 
 export interface ButtonProp {
-  onClick?: () => void;
+  onClick?: () => any;
   type?: 'button' | 'submit' | 'reset';
   children?: React.ReactNode;
   className?: string;
@@ -23,11 +23,13 @@ export interface InputProp {
   value?: string;
   name?: string;
   placeholder?: string;
-  error?: boolean;
+  error?: any;
   errorMessage?: string;
   disabled?: boolean;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+  onChange?: any;
   required?: boolean;
+  minLength?: number;
+  maxLength?: number;
 }
 
 export interface TextAreaProp {

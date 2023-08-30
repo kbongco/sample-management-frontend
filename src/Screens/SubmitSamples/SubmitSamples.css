@@ -86,3 +86,7 @@ grid-column-gap: 0px;
 grid-row-gap: 0px;
   grid-area: 6 / 1 / 7 / 3;
 }
+
+.chbi-submit-button {
+  margin-right: 16px;
+}

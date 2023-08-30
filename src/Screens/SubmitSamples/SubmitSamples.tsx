@@ -23,36 +23,38 @@ type FormValues = {
 }
 
 export default function SubmitSamples() {
-  const {
-    register,
-    control,
-    handleSubmit,
-    watch,
-    formState: { errors, isDirty }
-  } = useForm();
+  const { register, handleSubmit, control, formState: {
+    errors, isDirty
+  } } = useForm();
+  // const {
+  //   register,
+  //   control,
+  //   handleSubmit,
+  //   watch,
+  //   formState: { errors, isDirty }
+  // } = useForm();
 
-  const form = useForm<FormValues>({
-    defaultValues: {
-      sampleName: '',
-      totalSamples: '',
-      chemistName: '',
-      specialInstructions: ''
-    }
-  });
 
+  const useSelectedState = (initialValue: string) => {
+    const [selectedValue, setSelectedValue] = useState<string>(initialValue);
+
+    const handleSelectChange = (value: string) => {
+      setSelectedValue(value);
+      console.log(value);
+    };
+
+    return [selectedValue, handleSelectChange] as const;
+  };
 
   const [selectedOption, setSelectedOption] = useState<string>('Select Options');
-  // const [selectedTest, setSelectedTest] = useState<string>('Select Test')
-
-  const handleSelectChange = (value: string) => {
-    setSelectedOption(value);
-  };
+  const [selectedTest, setSelectedTest] = useState<string>('Select Test')
+  const [nameLength, setNameLength] = useState<number>(0)
 
   const onSubmit = (data: any) => {
     console.log(data);
+    console.log('test');
   };
 
-  console.log(watch("name"));
 
   const { t } = useTranslation();
   return (
@@ -77,10 +79,12 @@ export default function SubmitSamples() {
                 <Controller
                   name='sampleName'
                   control={control}
+                  rules={{ minLength: 5, required: true }}
                   render={({ field }) => <Input label='Sample Name'
                     error={!!isDirty}
-                    errorMessage={t('formMessages.requiredField')}
-                    {...field} {...register("sampleName", { required: "Sample Name is required" })} />} />
+                    errorMessage={`${!!isDirty ? t('formMessages.requiredField') : ''}`}
+                    {...register("sampleName", {
+                    })}      {...field} />} />
               </div>
               <div className='chbi-input-2'>
                 <Controller
@@ -91,7 +95,7 @@ export default function SubmitSamples() {
                     label="Select Sample Type"
                     options={constants.sampleType}
                     value={selectedOption}
-                    onChange={handleSelectChange}
+                    onChange={setSelectedOption}
                   />}
                 />
               </div>
@@ -99,8 +103,10 @@ export default function SubmitSamples() {
                 <Controller
                   name='totalSamples'
                   control={control}
-                  render={({ field }) => <Input                   error={!!isDirty}
-                  errorMessage={t('formMessages.requiredField')}label='Number of Samples' {...field} {...register("totalSamples", { required: "Total Number of Samples required" })} />} />
+                  rules={{ minLength: 1, required: true }}
+                  render={({ field }) => <Input label='Number of Samples' {...field}
+                    error={!!isDirty}
+                    errorMessage={`${!!isDirty ? t('formMessages.requiredField') : ''}`} />} />
               </div>
               <div className='chbi-input-4'>
                 <Controller
@@ -113,9 +119,10 @@ export default function SubmitSamples() {
               <div className='chbi-input-8'>
                 <Controller name='chemistName'
                   control={control}
+                  rules={{ minLength: 5, required: true }}
                   render={({ field }) => <Input
                     error={!!isDirty}
-                    errorMessage={t('formMessages.requiredField')} label='Chemist Name' {...field} {...register("chemistName", { required: true })} />} />
+                    errorMessage={t('formMessages.requiredField')} label='Chemist Name' {...field} />} />
               </div>
               <div className='chbi-input-9'>
                 <Controller
@@ -124,8 +131,8 @@ export default function SubmitSamples() {
                   render={({ field }) => <DropDown
                     label="Select test"
                     options={constants.sampleTests}
-                    value={selectedOption}
-                    onChange={handleSelectChange}
+                    value={selectedTest}
+                    onChange={setSelectedTest}
                   />}
                 />
               </div>
@@ -135,19 +142,19 @@ export default function SubmitSamples() {
                   control={control}
                   render={({ field }) => <CheckBox label={t('submitScreen.25C')} checked={false} />} />
                 <Controller
-                  name='uploadfile'
+                  name='temperatureCheck'
                   control={control}
                   render={({ field }) => <CheckBox label={t('submitScreen.F/T')} checked={false} />} />
                 <Controller
-                  name='uploadfile'
+                  name='temperatureCheck'
                   control={control}
                   render={({ field }) => <CheckBox label={t('submitScreen.40C')} checked={false} />} />
                 <Controller
-                  name='uploadfile'
+                  name='temperatureCheck'
                   control={control}
                   render={({ field }) => <CheckBox label={t('submitScreen.50C')} checked={false} />} />
                 <Controller
-                  name='uploadfile'
+                  name='temperatureCheck'
                   control={control}
                   render={({ field }) => <CheckBox label={t('submitScreen.All')} checked={false} />} />
               </div>
@@ -161,11 +168,15 @@ export default function SubmitSamples() {
           </div>
           <div className='chbi-textarea-submit-container'>
             <div className='chbi-input-5'>
-              <TextArea rows={5} cols={35} label='Special Instructions' />
+              <Controller 
+              name='specialInstructions'
+              control={control}
+                rules={{ minLength: 5, required: true }}
+                render={({ field }) => <TextArea rows={5} cols={35} label='Special Instructions' {...field} />} />
+              </div>
             </div>
-          </div>
           <div className='chbi-form-buttons-container'>
-            <Button size="medium" className="primary">Submit</Button>
+            <Button size="medium" className="primary chbi-submit-button">Submit</Button>
             <Button size="medium" className="danger">Cancel</Button>
           </div>
         </form>

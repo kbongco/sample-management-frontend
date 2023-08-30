@@ -5,7 +5,7 @@ export default function Input({ type, label, value, name, placeholder, error, di
   return (
     <div className='chbi-input-container'>
       <label className='chbi-input-label'>{label}</label>
-      <input className='chbi-input'
+      <input className='chbi-input '
         type={type}
         value={value}
         name={name}
