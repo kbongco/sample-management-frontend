@@ -24,30 +24,6 @@ type FormValues = {
 }
 
 export default function SubmitSamples() {
-  const { register, handleSubmit, control, formState: {
-    errors, isDirty
-  }, reset } = useForm({
-    defaultValues: {
-      sampleName: '',
-      sampleType: '',
-      totalSamples: '',
-      uploadfile: '',
-      chemistName: '',
-      temperatureCheck: '',
-      uploadphoto: '',
-      specialInstructions:''
-    }
-  })
-  
-  // const {
-  //   register,
-  //   control,
-  //   handleSubmit,
-  //   watch,
-  //   formState: { errors, isDirty }
-  // } = useForm();
-
-
   const useSelectedState = (initialValue: string) => {
     const [selectedValue, setSelectedValue] = useState<string>(initialValue);
 
@@ -61,6 +37,10 @@ export default function SubmitSamples() {
 
   const [selectedOption, setSelectedOption] = useState<string>('Select Options');
   const [selectedTest, setSelectedTest] = useState<string>('Select Test')
+
+    const { register, handleSubmit, control, formState: {
+    errors, isDirty
+  }, reset } = useForm()
 
   const onSubmit = (data: any) => {
     console.log(data);
@@ -93,10 +73,10 @@ export default function SubmitSamples() {
                   name='sampleName'
                   control={control}
                   rules={{ minLength: 5, required: true }}
-                  render={({ field }) => <Input label='Sample Name'
+                  render={({ field, fieldState }) => <Input label='Sample Name'
 
-                    error={isDirty}
-                    errorMessage={`${!!isDirty ? t('formMessages.requiredField') : ''}`}
+                  error={errors.sampleName && fieldState.isTouched}
+                  errorMessage={errors.sampleName && t('formMessages.requiredField')}
                     {...register("sampleName", {
                     })}      {...field}
                     />} />
@@ -105,11 +85,11 @@ export default function SubmitSamples() {
                 <Controller
                   name='sampleType'
                   control={control}
+                  defaultValue={selectedOption} 
                   render={({ field }) => <DropDown
                     {...field}
                     label="Select Sample Type"
                     options={constants.sampleType}
-                    value={selectedOption}
                     onChange={setSelectedOption}
                   />}
                 />
@@ -119,8 +99,8 @@ export default function SubmitSamples() {
                   name='totalSamples'
                   control={control}
                   rules={{ minLength: 1, required: true }}
-                  render={({ field }) => <Input label='Number of Samples' {...field}
-                    error={!!isDirty}
+                  render={({ field, fieldState }) => <Input label='Number of Samples' {...field}
+                    error={ errors.totalSamples && fieldState.isTouched}
                     errorMessage={`${!!isDirty ? t('formMessages.requiredField') : ''}`} />} />
               </div>
               <div className='chbi-input-4'>
