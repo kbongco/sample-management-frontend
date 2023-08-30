@@ -14,7 +14,7 @@
 }
 
 .chbi-navbar-blank-user {
-  max-width: 75%;
+  max-width: calc(100% - 80px);
   border-radius: 50%;
 }
 
@@ -22,6 +22,10 @@
   height: 40px;
   margin-left: 8px;
   padding-top: 24px;
+}
+
+.chbi-navbar-links-container {
+  margin-top: 1.5em;
 }
 
 .chbi-navbar-links-000 {

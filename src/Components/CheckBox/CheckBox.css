@@ -1,0 +1,10 @@
+.chbi-checkbox-container {
+  display: flex;
+}
+
+.chbi-checkbox-label {
+  width: 50px;
+  font-size: 0.8rem;
+  align-items: center;
+  display: flex;
+}

@@ -12,5 +12,23 @@
   "viewAllSamples": "View Your Samples",
   "allTeamSamples": "All your team's samples",
   "viewDetails": "View Details",
-  "needsToBeAddressed": "Needs to be Addressed"
+  "needsToBeAddressed": "Needs to be Addressed",
+  "submitScreen": {
+    "submitHeader": "Submit Samples",
+    "instructions":{
+      "first": "Please provide a paper copy to the lab, as well as an uploaded version of your samples paperwork. This is to ensure that we have a record that you submitted samples for testing",
+      "second": "Please provide any special instructions for testing below",
+      "third": "Once we have recieved everything, you will recieve an email notifying you that we have it on record and testing will begin as scheduled",
+      "fourth": "Any issues please contact the lab, and we will get back to you ASAP",
+      "warning": "Any missing samples or missing information will cause a delay in processing"
+    },
+    "25C": "25 C",
+    "F/T": "Freeze Thaw",
+    "40C": "40 C",
+    "50C": "50 C",
+    "All": "All"
+  }, 
+  "formMessages": {
+    "requiredField": "This is a required field"
+  }
 }

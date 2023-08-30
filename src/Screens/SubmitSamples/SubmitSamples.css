@@ -1,0 +1,92 @@
+.chbi-submit-header-container {
+  height: 15vh;
+  display: flex;
+  align-items: end;
+}
+
+.chbi-submit-samples-form-container {
+  margin-left: 24px;
+}
+
+.chbi-submit-instructions-container {
+  width: 50vw;
+  height: 15vh;
+}
+
+.chbi-form-buttons-container {
+  display:flex;
+  justify-content:end;
+  padding-top: 24px;
+}
+
+.chbi-form-submit {
+  margin-right: 16px;
+}
+
+.chbi-submit-header {
+  margin: 0;
+}
+
+.chbi-submit-warning-label {
+  font-size: 0.7rem;
+}
+
+.chbi-submit-form-layout {
+  width: auto;
+  height: auto;
+
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 240px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+}
+
+.chbi-submit-form-column1 {
+  grid-area: 1 / 1 / 6 / 2;
+}
+
+.chbi-submit-button {
+  margin-right: 16px;
+}
+
+.chbi-input-1 {
+  grid-area: 1 / 1 / 2 / 2; 
+}
+
+.chbi-input-2 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.chbi-input-3 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.chbi-input-4 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.chbi-submit-form-column2 {
+  grid-area: 1 / 2 / 6 / 3;
+}
+
+.chbi-input-8 {
+  grid-area: 1 / 2 / 2 / 3; 
+}
+
+.chbi-input-9{
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.chbi-input-10 {
+  padding-top: 8px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+  grid-area: 6 / 1 / 7 / 3;
+}
+
+.chbi-submit-button {
+  margin-right: 16px;
+}

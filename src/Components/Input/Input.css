@@ -1,0 +1,30 @@
+.chbi-input-container {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+.chbi-input-label {
+  font-size: 1.1rem;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.chbi-input {
+  height: 30px;
+  border: 1px solid black;
+}
+
+.chbi-input-error-container {
+  margin-top: 8px;
+}
+
+.chbi-input-error {
+  border-color: red; /* Apply a red border for error state */
+}
+
+.chbi-input-error:focus {
+  border-color: red; 
+  outline: none; 
+}

@@ -1,0 +1,23 @@
+.chbi-textarea-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 16px;
+  width: 100%;
+}
+
+.chbi-textarea-label {
+  font-size: 1.1rem;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.chbi-textarea {
+  height: 150px;
+  border: 1px solid black;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
