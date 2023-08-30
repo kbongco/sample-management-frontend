@@ -35,7 +35,7 @@ export default function SubmitSamples() {
     return [selectedValue, handleSelectChange] as const;
   };
 
-  const [selectedOption, setSelectedOption] = useState<string>('Select Options');
+  const [selectedOption, setSelectedOption] = useState<any>(constants.sampleType[1]);
   const [selectedTest, setSelectedTest] = useState<string>('Select Test')
 
     const { register, handleSubmit, control, formState: {
